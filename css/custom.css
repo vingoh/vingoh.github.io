@@ -1,0 +1,20 @@
+.note {
+  padding: 14px 18px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+.note.thought {
+  border-left: 4px solid #42b983;
+  background: #f6fffa;
+}
+
+.note.insight {
+  border-left: 4px solid #3b82f6;
+  background: #f0f7ff;
+}
+
+.note.question {
+  border-left: 4px solid #f59e0b;
+  background: #fff7ed;
+}

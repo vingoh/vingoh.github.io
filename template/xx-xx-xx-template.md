@@ -11,3 +11,23 @@ tags:								        # 标签
 ---
 
 正文
+
+<div class="note thought">
+
+💡 思考
+
+agent 的核心在于 loop，而不是 tool
+
+</div>
+
+<div class="note insight">
+🧠 理解
+</div>
+
+
+<div class="note question">
+❓ 疑问
+</div>
+
+>  💡    **我的思考**
+> agent 的核心在于 loop，而不是 tool
