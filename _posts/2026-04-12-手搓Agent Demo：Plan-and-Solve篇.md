@@ -88,7 +88,7 @@ sequenceDiagram
 ### Planner
 Planner的结构比较简单，基本上不需要太多的改动，只需要在prompt上下点功夫，约定好输出的plan格式即可，整体代码如下：
 
-```python!
+```python
 PLANNER_PROMPT_TEMPLATE = """
 你是一个任务规划专家。你的职责是将用户的复杂问题拆解为一系列清晰、可执行的子步骤。
 
@@ -149,7 +149,7 @@ Executor方面做了一些改动，首先与教程中一个主要的不同是，
 
 整体代码如下：
 
-```python!
+```python
 
 EXECUTOR_PROMPT_TEMPLATE = """
 你是一个任务执行专家。你需要完成当前子任务，同时理解它在整体计划中的位置。
@@ -278,7 +278,7 @@ class Executor:
 
 是直接的调用类，但并不直接持有llm类，只对planner和executor进行调度编排。主要的作用是调用planner，获取执行计划传给executor，以及对历史执行结果的解析和记录，作为记忆输入给executor。
 
-```python!
+```python
 
 class PlanAndSolveAgent:
     """

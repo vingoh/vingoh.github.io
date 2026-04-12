@@ -29,3 +29,14 @@ samp,
   font-variant-ligatures: none;
   font-feature-settings: "liga" 0, "calt" 0;
 }
+
+/* Post body: let Rouge-highlighted code wrap long lines (overrides syntax.css nowrap on spans) */
+.post-container .highlight pre {
+  overflow-x: auto;
+}
+.post-container .highlight pre code,
+.post-container .highlight pre code * {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
