@@ -18,3 +18,14 @@
   border-left: 4px solid #f59e0b;
   background: #fff7ed;
 }
+
+/* Disable font ligatures in code so tokens like `history` are not rendered as `his→ry` */
+code,
+pre,
+kbd,
+samp,
+.highlight code {
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
