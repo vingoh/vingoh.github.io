@@ -52,6 +52,7 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
+  math_engine: mathjax                  # LaTeX math blocks for MathJax in browser
 
 
 # Gitalk
