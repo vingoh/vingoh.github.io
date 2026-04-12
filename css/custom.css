@@ -40,3 +40,13 @@ samp,
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+
+/* Mermaid diagrams (replaced from fenced ```mermaid in post layout) */
+.post-container .mermaid {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+.post-container .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}

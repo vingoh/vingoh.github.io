@@ -171,6 +171,39 @@ layout: default
     </div>
 </article>
 
+<!-- Mermaid: turn fenced ```mermaid blocks into diagrams (Kramdown/Rouge emits pre > code.language-mermaid) -->
+<script>
+(function () {
+  function hasMermaidBlocks() {
+    return document.querySelector('.post-container pre code.language-mermaid, .post-container pre code[class*="language-mermaid"]');
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!hasMermaidBlocks()) return;
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js';
+    s.onload = function () {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      document.querySelectorAll('.post-container pre code.language-mermaid, .post-container pre code[class*="language-mermaid"]').forEach(function (code) {
+        var pre = code.parentElement;
+        var wrap = code.closest('div.highlighter-rouge') || code.closest('div.highlight') || pre;
+        var source = code.textContent;
+        var container = document.createElement('div');
+        container.className = 'mermaid';
+        container.textContent = source;
+        wrap.parentNode.replaceChild(container, wrap);
+      });
+      mermaid.run({ querySelector: '.post-container .mermaid' }).catch(function (e) {
+        console.error('Mermaid render failed:', e);
+      });
+    };
+    document.head.appendChild(s);
+  });
+})();
+</script>
 
 {% if site.disqus_username %}
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
