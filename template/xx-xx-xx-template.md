@@ -12,7 +12,7 @@ tags:								        # 标签
 
 正文
 
-<div class="note thought">
+<div class="note thought" markdown="1">
 
 💡 思考
 
@@ -20,12 +20,12 @@ agent 的核心在于 loop，而不是 tool
 
 </div>
 
-<div class="note insight">
+<div class="note insight" markdown="1">
 🧠 理解
 </div>
 
 
-<div class="note question">
+<div class="note question" markdown="1">
 ❓ 疑问
 </div>
 
