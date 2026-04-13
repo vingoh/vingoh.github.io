@@ -506,3 +506,12 @@ Action: Finish[英伟达最新的GPU型号是GeForce RTX 40 SUPER系列，包括
 [AGENT][STEP 2][ACTION_RAW] Finish[英伟达最新的GPU型号是GeForce RTX 40 SUPER系列，包括RTX 4080 SUPER、RTX 4070 Ti SUPER和RTX 4070 SUPER，这些产品于2024年CES展会上发布。]
 [AGENT][STEP 2][FINISH] 英伟达最新的GPU型号是GeForce RTX 40 SUPER系列，包括RTX 4080 SUPER、RTX 4070 Ti SUPER和RTX 4070 SUPER，这些产品于2024年CES展会上发布。
 ```
+<div class="note question" markdown="1">
+❓ 疑问
+
+这里会发现最后给出的结果实际是不准确的，当前2026年最新的消费级显卡应该是5090而非4090，且重复了几次都是相同的结果。检查记录发现是在执行第一次搜索的时候，搜索内容为“英伟达最新GPU型号 2024”，正是后面的2024关键字导致了问题。
+
+简单分析llm为什么会在这里加上2024的关键字，猜想的可能原因是模型对“当前”、“现在”这种关键字没有很好的理解，采用了训练时的时间戳。
+
+当修改prompt让模型在涉及“当下”、“最新”等关键字的时候，通过工具获取年份。这样之后可以最终获得正确的50590的答案。
+</div>
